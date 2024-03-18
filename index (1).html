@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aryan API's Website</title>
+  <style>
+    body {
+      font-family: 'Verdana', sans-serif;
+      margin: 20px;
+      background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+      animation: rainbowText 5s infinite;
+    }
+
+    @keyframes rainbowText {
+      0% { color: red; }
+      25% { color: orange; }
+      50% { color: yellow; }
+      75% { color: green; }
+      100% { color: blue; }
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ff9900;
+      padding: 5px 15px;
+      margin: 0 10px;
+      border-radius: 20px;
+      transition: background-color 0.5s;
+    }
+
+    nav a:hover {
+      background-color: #ff9900;
+      color: #fff;
+    }
+
+    .api-list {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .api-list-item {
+      margin-bottom: 20px;
+    }
+
+    .api-list-item a {
+      text-decoration: none;
+      color: #ff9900;
+      font-weight: bold;
+      padding: 5px 10px;
+      border: 2px solid #ff9900;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    .api-list-item a:hover {
+      background-color: #ff9900;
+      color: #fff;
+    }
+
+    .api-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 153, 0, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .api-form label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .api-form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .api-form button {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .owner-info {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      color: #333;
+      text-align: center;
+    }
+
+    #current-time,
+    #current-date {
+      color: #ff0000;
+      text-align: center;
+      border-radius: 30px;
+      font-weight: bold;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #00ccff;
+      font-size: 30px;
+      margin: 0 10px;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img class="logo" src="https://i.imgur.com/RbGxS1V.jpeg" alt="Official AryanAPIs Website">
+  <h1>Welcome to APIs Hub</h1>
+</header>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+</nav>
+
+<!-- Custom API Form -->
+<form class="api-form" action="/custom-api" method="get">
+  <label for="custom-user">YOUR-NAME</label>
+  <input type="text" id="custom-user" name="user" required>
+
+  <label for="custom-title">BOT-NAME</label>
+  <input type="text" id="custom-title" name="title" required>
+
+  <label for="custom-prompt">QUERY</label>
+  <input type="text" id="custom-prompt" name="prompt" required>
+
+  <button type="submit">SUBMIT</button>
+</form>
+
+<ul class="api-list"
+<h1>📢 ALL API's ENDPOINT</h1>
+
+<li class="api-list-item"><a href="/gpt?prompt=hello">💬⚙ GPT API</a></li>
+
+<li class="api-list-item"><a href="/gemini?prompt=hello">💬⚙ GEMINI API</a></li>
+
+<li class="api-list-item"><a href="/orochi?prompt=hello">💬⚙ OROCHI AI API</a></li>
+
+<li class="api-list-item"><a href="/gpt4?prompt=hello">💬⚙ GPT4 API</a></li>
+
+  <li class="api-list-item"><a href="/boxai?query=hello">💬⚙ BOXAI API</a></li>
+
+   <li class="api-list-item"><a href="/liner?prompt=hello">💬⚙ LINERAI API</a></li>
+
+  <li class="api-list-item"><a href="/gemini2?prompt=hello&url=https://i.imgur.com/nggvCGc.jpeg">💬⚙ GEMINI 2 API</a></li>
+
+   <li class="api-list-item"><a href="/mistral?prompt=hello">💬⚙ MISTRALAi API</a></li>
+
+  <li class="api-list-item"><a href="/metallama?prompt=hello">💬⚙ METALLAMAAI API</a></li>
+
+<li class="api-list-item"><a href="/simplegpt?prompt=hello">💬⚙ SIMPLE GPT API</a>
+</li>
+
+  <li class="api-list-item"><a href="/chatgpt2">💬⚙ ChatGPT v2 API</a>
+</li>
+
+<li class="api-list-item"><a href="/arched?prompt=hello">💬⚙ ARCHED AI API</a></li>
+
+  <li class="api-list-item"><a href="/doctor?prompt=I+have+fiber+what+I+do+now">💬⚙ DOCTOR AI API</a></li>
+
+<li class="api-list-item"><a href="/recipe?prompt=make+simple+cake">💬⚙ SIMPLE RECIPE AI API</a></li>
+
+<li class="api-list-item"><a href="/shy?prompt=hi+baby">💬⚙ SHY AI API</a>
+</li>
+
+<li class="api-list-item"><a href="/chesca2?prompt=hello">💬⚙ CHESCA v2 API</a></li>
+
+  <li class="api-list-item"><a href="/horny?prompt=hi+baby">💬⚙ HORNY AI API</a></li>
+
+<li class="api-list-item"><a href="/hercai?prompt=hello">💬⚙ HERC AI API</a></li>
+
+  <li class="api-list-item"><a href="/cheaca?query=hello">💬⚙ CHESCA AI API</a></li>
+
+  <li class="api-list-item"><a href="/sdxl?prompt=sky&styles=7">🖼️⚙ SDXL API</a></li>
+
+   <li class="api-list-item"><a href="/emi?prompt=cute+anime+girl">🖼️⚙ EMI API</a></li>
+
+   <li class="api-list-item"><a href="/render?prompt=sky">🖼️⚙ RENDER API</a></li>
+
+   <li class="api-list-item"><a href="/generate?prompt=sky&model=19">🖼️⚙ GENERATE API</a></li>
+
+   <li class="api-list-item"><a href="/prodia?prompt=sky&model=18">🖼️⚙ PRODIA API</a></li>
+
+<li class="api-list-item"><a href="/dalle?prompt=sky&cookie">🖼️⚙ DALLE API</a></li>
+
+  <li class="api-list-item"><a href="/texttoimage?prompt=sky">🖼️⚙ TEXTOIMAGE API</a></li>
+
+<li class="api-list-item"><a href="/say?text=hello">📢⚙ SAY API</a></li>
+
+   <li class="api-list-item"><a href="/snoop?text=hello">📢⚙ SNOOP API</a></li>
+
+ <li class="api-list-item"><a href="/beast?text=hello">📢⚙ BEAST API</a></li>
+
+ <li class="api-list-item"><a href="/jane?text=hello">📢⚙ JANE API</a></li>
+
+   <li class="api-list-item"><a href="/pixart?prompt=cat&styles=1">🖼️⚙ PIXART API</a></li>
+
+   <li class="api-list-item"><a href="/pixelart?prompt=cat">🖼️⚙ PIXELART API</a></li>
+
+ <li class="api-list-item"><a href="/remini?url=">🖼️⚙ REMINI API</a></li>
+
+ <li class="api-list-item"><a href="/4k?url=">🖼️⚙ 4K API</a></li>
+
+  <li class="api-list-item"><a href="/wanted?uid=2">😄⚙ WANTED API</a></li>
+
+   <li class="api-list-item"><a href="/wasted?uid=4">😄⚙ WASTED API</a></li>
+
+    <li class="api-list-item"><a href="/pet?uid=4">😄⚙ PET API</a></li>
+
+   <li class="api-list-item"><a href="/shit?uid=3">😄⚙ SHIT API</a></li>
+
+
+<li class="api-list-item"><a href="/prompt?about=boy">💬⚙ PROMPT API</a></li>
+
+  <li class="api-list-item"><a href="/prompt2?url=">💬⚙ PROMPT2 API</a></li>
+
+  <li class="api-list-item"><a href="/promptgen?prompt=boy">💬⚙ PROMPTGEN API</a></li>
+
+    <li class="api-list-item"><a href="/sim?chat=hello&lang=en">💎⚙ SIM API</a></li>
+
+   <li class="api-list-item"><a href="/dp">🖼️⚙ DP API</a></li>
+
+    <li class="api-list-item"><a href="/anime">🖼️⚙ ANIME API</a></li>
+
+  <li class="api-list-item"><a href="/nsfw">🖼️⚙ NSFW API</a></li>
+
+ <li class="api-list-item"><a href="/lyrics?songName=cupid+fifty+fifty">🎶⚙ LYRICS API</a></li>
+
+ <li class="api-list-item"><a href="/lyrics2?prompt=Cupid+fifty+fifty">🎶⚙ LYRICS2 API</a></li>
+
+ <li class="api-list-item"><a href="/bard?query=clear&uid=4">💎⚙ BARD1 API</a></li>
+
+  <li class="api-list-item"><a href="/bard2?prompt=hello&uid=4&url=">💎⚙ BARD2 API</a></li>
+
+ <li class="api-list-item"><a href="/bard3?query=hello&uid=4">💎⚙ BARD3 API</a></li>
+
+ <li class="api-list-item"><a href="/spotify?query=let+me+love+you">🎧⚙ SPOTIFY API</a></li>
+
+<li class="api-list-item"><a href="/spotify2?query=Eshk+Mubarak&selectedTrack=Eshk+mubarak">🎧⚙ SPOTIFY2 API</a></li>
+
+  <li class="api-list-item"><a href="/video?url=">🎧⚙ YOUTUBE API</a></li>
+
+<li class="api-list-item"><a href="/imgur?url=">🈴⚙ IMGUR API</a></li>
+
+  <li class="api-list-item"><a href="/tempmail/get">📩⚙ TEMPMAIL GEN API</a></li>
+
+  <li class="api-list-item"><a href="/tempmail/inbox?email=">📩⚙ TEMPMAIL INBOX API</a></li>
+
+  <li class="api-list-item"><a href="/pinterest?query=Sky&numberSearch=5">🖼️⚙ PINTEREST API</a></li>
+
+  <li class="api-list-item"><a href="/wallpaper?query=boy">🖼️⚙ WALLPAPER API</a></li>
+
+  <li class="api-list-item"><a href="/waifu?Name=waifu">🖼️⚙ WAIFU API</a></li>
+
+  <li class="api-list-item"><a href="/joke">🈂️⚙ JOKE API</a></li>
+
+  <li class="api-list-item"><a href="/fact">🈂️⚙ FACT API</a></li>
+
+  <li class="api-list-item"><a href="/pickuplines">🈂️⚙ PICKUPLINES API</a></li>
+
+ <li class="api-list-item"><a href="/quote?category=alone">🈂️⚙ QUOTE API</a></li>
+
+ <li class="api-list-item"><a href="/shoti">🎬⚙ SHOTI2 API</a></li>
+
+ <li class="api-list-item"><a href="/shoti">🎬⚙ SHOTI API</a></li>
+
+  <li class="api-list-item"><a href="/matrix?prompt=hello">🈂️⚙ MATRIX API</a></li>
+
+ <li class="api-list-item"><a href="/advice">🈂️⚙ ADVICE API</a></li>
+
+ <li class="api-list-item"><a href="/tiktokinfo?userName=mia_khalifa">💎⚙ TIKTOKINFO API</a></li>
+
+  <li class="api-list-item"><a href="/dalle?query=boy&cookies=">🖼️⚙ DALLE-3 API</a></li>
+
+  <li class="api-list-item"><a href="/imgbb">🈂️⚙ IMGBB API</a></li>
+
+  <li class="api-list-item"><a href="/lyricsvideo">🎬⚙ LYRICAL VIDEO API</a></li>
+
+<li class="api-list-item"><a href="/sumi?query=hello&userName=LiANE">🎀 SUMI AI API</a></li>
+
+<li class="api-list-item"><a href="/hercai2?query=hello&userName=LiANE">🎀 HERC AI API</a></li>
+
+<li class="api-list-item"><a href="/chesca?query=hello&userName=LiANE">🎀 CHESCA AI API</a></li>
+
+<li class="api-list-item"><a href="/cassandra?query=hello&userName=LiANE">🎀 Cassandra AI API</a></li>
+
+<li class="api-list-item"><a href="/cassandrav2?query=hello&userName=LiANE">🎀 Cassandrav2 AI API</a></li>
+
+<li class="api-list-item"><a href="/cassandrav3?query=hello&userName=LiANE">🎀 Cassandrav3 AI API</a></li>
+
+<li class="api-list-item"><a href="/nica?query=hello&userName=LiANE">🎀 Nica AI API</a></li>
+
+<li class="api-list-item"><a href="/bard4?query=hello&userName=LiANE">🎀 Bard AI API</a></li>
+
+<li class="api-list-item"><a href="/bulter?query=hello&userName=LiANE">🎀 Bulter AI API</a></li>
+
+<li class="api-list-item"><a href="/insight?query=hello&userName=LiANE">🎀 Insight AI API</a></li>
+
+<li class="api-list-item"><a href="/tai?query=hello&userName=LiANE">🎀 Tai AI API</a></li>
+
+<li class="api-list-item"><a href="/copilot?query=hello&userName=LiANE">🎀 Copilot AI API</a></li>
+
+<li class="api-list-item"><a href="/taylor?query=hello&userName=LiANE">🎀 Taylor AI API</a></li>
+
+<li class="api-list-item"><a href="/catgpt?query=hello&userName=LiANE">🎀 CatGPT AI API</a></li>
+
+<li class="api-list-item"><a href="/dogbot?query=hello&userName=LiANE">🎀 DogBot AI API</a></li>
+
+<li class="api-list-item"><a href="/cyberdetective?query=hello&userName=LiANE">🎀 CyberDetective AI API</a></li>
+
+<li class="api-list-item"><a href="/spaceexplorer?query=hello&userName=LiANE">🎀 SpaceExplorer AI API</a></li>
+
+<li class="api-list-item"><a href="/gordonai?query=hello&userName=LiANE">🎀 GordonAi AI API</a></li>
+
+<li class="api-list-item"><a href="/unlceroger?query=hello&userName=LiANE">🎀 UnlceRoger AI API</a></li>
+
+<li class="api-list-item"><a href="/codellama2?query=hello&userName=LiANE">🎀 codellama v2 AI API</a></li>
+
+<li class="api-list-item"><a href="/minstral?query=hello&userName=LiANE">🎀 Minstral AI API</a></li>
+
+<li class="api-list-item"><a href="/grok?query=hello&userName=LiANE">🎀 Grok AI API</a></li>
+
+<li class="api-list-item"><a href="/cyra?query=hello&userName=LiANE">🎀 Cyra AI API</a></li>
+
+<li class="api-list-item"><a href="/vivara?query=hello&userName=LiANE">🎀 Vivara AI API</a></li>
+
+<li class="api-list-item"><a href="/jscompilerai?query=hello&userName=LiANE">🎀 JsCompilerAI AI API</a></li>
+
+<li class="api-list-item"><a href="/serenis?query=hello&userName=LiANE">🎀 Serenis AI API</a></li>
+
+<li class="api-list-item"><a href="/quantum_quill?query=hello&userName=LiANE">🎀 Quantum_Quill AI API</a></li>
+
+<li class="api-list-item"><a href="/kiyokata?query=hello&userName=LiANE">🎀 Kiyokata AI API</a></li>
+
+<li class="api-list-item"><a href="/goatai?query=hello&userName=LiANE">📝 GoatAi
+API</a></li>
+
+<li class="api-list-item"><a href="/art?url=${url}&model=${model}">ART API</a></li>
+
+<li class="api-list-item"><a href="/imagine?prompt=sky&model=${model}">IMAGINE API</a></li>
+
+<li class="api-list-item"><a href="/sdxlv3?prompt=cat&model=${model}">SDXL V3
+API</a></li>
+
+  <li class="api-list-item"><a href="/lyricsv2?songName=cupid+fifty+fifty">🎶⚙ MULTI LYRICS API</a></li>
+  
+<li class="api-list-item"><a href="/lyricsx?songName=lyrics+cupid+fifty+fifty">🎶⚙ LYRICS API</a></li>
+  
+ <li class="api-list-item"><a href="/chatgpt?prompt=hello">💬⚙ ChatGPT API</a></li>
+
+<h1>👑 Have A Great Day </h1>
+  </ul>
+
+<!-- Owner Information -->
+<div class="owner-info">
+  <p>Name : Aryan Chauhan</p>
+  <p>Contact: aryanchauhan78578@gmail.com</p>
+ <p>APIs Crafted By Aryan Chauhan</p>
+</div>
+
+<!-- Current Time and Date -->
+<p>Current Time: <span id="current-time"></span></p>
+<p>Current Date: <span id="current-date"></span></p>
+
+<!-- Social Media Links -->
+<div class="social-links">
+  <a href="https://facebook.com/61551115508535" target="_blank">Facebook</a>
+  <a href="https://m.me/official.aryan.xyz" target="_blank">Messanger</a>
+  <a href="https://github.com/aryanchauhan09" target="_blank">GitHub</a>
+</div>
+
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById("current-time").innerText = timeString;
+  }
+
+  function updateDate() {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    document.getElementById("current-date").innerText = dateString;
+  }
+
+  updateTime();
+  updateDate();
+  setInterval(updateTime, 1000);
+  setInterval(updateDate, 86400000); // Update date every day
+</script>
+
+<!-- Copyright Information -->
+<p class="copyright">© 2024 Aryan APIs. All rights reserved.</p>
+</body>
+</html>
