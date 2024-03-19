@@ -9,6 +9,215 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/api/quiz/quiz/all', async (req, res) => {
+  try {
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/api/quiz/quiz/all`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/apiv2/quiz', async (req, res) => {
+  try {
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/apiv2/quiz?credit=Junfuckya`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/apiv2/quiz/v1', async (req, res) => {
+  try {
+    const { category } = req.query;
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/apiv2/aniquiz?category=${category}&credit=Junfuckya`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/quiz/q', async (req, res) => {
+  try {
+    const { category } = req.query;
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/api/quiz/q?category=${category}&credit=Junfuckya`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/quiz/quiz', async (req, res) => {
+  try {
+    const { playerid, correctorwrong } = req.query;
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/api/quiz/quiz?playerid=${playerid}&correctorwrong=${correctorwrong}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/correct', async (req, res) => {
+  try {
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/correct`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/wrong', async (req, res) => {
+  try {
+    const response = await axios.get(`https://quiz-6rhj.onrender.com/wrong`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/insta/stalk', async (req, res) => {
+  try {
+    const { username } = req.query;
+    const response = await axios.get(`https://api.popcat.xyz/instagram?user=${username}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/word', async (req, res) => {
+  try {
+    const { length } = req.query;
+    const response = await axios.get(`https://random-word-api.herokuapp.com/word?length=${length}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/ramadan', async (req, res) => {
+  try {
+    const { city, botName } = req.query;
+    const response = await axios.get(`https://connect-simoai.onrender.com/tools/ramadan?city=${encodeURIComponent(cityName)}&botName=${encodeURIComponent(botName)}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/gen', async (req, res) => {
+    const { prompt } = req.query;
+
+    if (!prompt) {
+        return res.status(400).json({ error: 'Please provide a prompt with styles' });
+    }
+
+    try {
+        const baseURL = `https://roxx-sandip.onrender.com/gen?prompt=${prompt}`;
+        const response = await axios.get(baseURL, { responseType: 'stream' });
+        response.data.pipe(res);
+    } catch (error) {
+        console.error('Error generating image:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+app.get('/api/say', async (req, res) => {
+    const { text, voiceid } = req.query;
+
+    if (!text) {
+        return res.status(400).json({ error: 'Please provide a valid text or Voice ID' });
+    }
+
+    try {
+        const baseURL = `https://for-devs.onrender.com/api/voice?text=${encodeURIComponent(text)}&voiceid=${voiceId}&apikey=fuck`;
+        const response = await axios.get(baseURL, { responseType: 'stream' });
+        response.data.pipe(res);
+    } catch (error) {
+        console.error('Error generating image:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+app.get('/api/pastebin/info', async (req, res) => {
+  try {
+    const { username } = req.query;
+    const response = await axios.get(`https://api-samir.onrender.com/pastebin/userinfo?name=${encodeURIComponent(username)}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/gen/image', async (req, res) => {
+    const { prompt, model } = req.query;
+
+    if (!prompt) {
+        return res.status(400).json({ error: 'Please provide a prompt with styles' });
+    }
+
+    try {
+        const baseURL = `https://api-samir.onrender.com/api/generateImage?style=${model}&prompt=${encodeURIComponent(prompt)}&aspectRatio=1:1`;
+        const response = await axios.get(baseURL, { responseType: 'stream' });
+        response.data.pipe(res);
+    } catch (error) {
+        console.error('Error generating image:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+app.get('/api/music/info', async (req, res) => {
+  try {
+    const { name } = req.query;
+    if (!name) {
+        return res.status(400).json({ error: 'please provide a song name' });
+    }
+    const response = await axios.get(`https://api.popcat.xyz/itunes?q=${name}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/insta/video', async (req, res) => {
+    const { url } = req.query;
+
+    if (!url) {
+        return res.status(400).json({ error: 'Please provide a valid Instagram video url' });
+    }
+
+    try {
+        const baseURL = `https://www.nguyenmanh.name.vn/api/igDL?url=${encodeURIComponent(name)}=&apikey=SyryTUZn`;
+        const response = await axios.get(baseURL, { responseType: 'stream' });
+        response.data.pipe(res);
+    } catch (error) {
+        console.error('Error generating image:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+app.get('/api/imgur', async (req, res) => {
+  try {
+    const { link } = req.query;
+    if (!link) {
+        return res.status(400).json({ error: 'Please provide a any Image,video,gif link' });
+    }
+    const response = await axios.get(`http://fi3.bot-hosting.net:20284/imgur?link=${encodeURIComponent(link)}`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/imgbb/upload', async (req, res) => {
+  try {
+    const response = await axios.get(`https://api-samir.onrender.com/upload`);
+    res.json({ answer: response.data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get('/api/gpt-4', async (req, res) => {
   const { prompt } = req.query;
 
