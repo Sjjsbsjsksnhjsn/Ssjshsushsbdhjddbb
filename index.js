@@ -74,8 +74,13 @@ app.get('/api/gpt4/v1', async (req, res) => {
     const response = await axios.get(`https://aryans-apis-hub.onrender.com/api/gpt-4?prompt=${encodeURIComponent(fullPrompt)}`);
     const answer = response.data;
 
+    // Check if the response is empty or null
+    if (!answer) {
+      throw new Error('Empty response from external API');
+    }
+
     // Combining title with response
-    const fullResponse = `${title} ${answer}`;
+    const fullResponse = `${title}${answer}`;
 
     res.json({ answer: fullResponse });
   } catch (error) {
