@@ -7,67 +7,184 @@
   <!-- Favicon -->
   <link rel="icon" href="https://i.ibb.co/7rBZBKF/image.jpg" type="image/jpg">
   <style>
-    /* Your existing CSS styles here */
-
-    /* Additions for cool features */
-
-    /* Floating Animation */
-    .floating {
-      animation: float 5s infinite ease-in-out;
+    body {
+      font-family: 'Verdana', sans-serif;
+      margin: 20px;
+      color: #333;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Glowing Text */
-    .glow {
-      font-size: 50px;
-      color: #fff;
+    header {
       text-align: center;
-      animation: glow-animation 1s infinite alternate;
+      margin-bottom: 20px;
     }
 
-    @keyframes glow-animation {
-      from { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
-      to { text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff; }
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+      animation: rainbowText 5s infinite;
     }
 
-    /* Modal Popup */
-    .modal {
-      display: none;
+    @keyframes rainbowText {
+      0% { color: red; }
+      25% { color: orange; }
+      50% { color: yellow; }
+      75% { color: green; }
+      100% { color: blue; }
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ff9900;
+      padding: 5px 15px;
+      margin: 0 10px;
+      border-radius: 20px;
+      transition: background-color 0.5s;
+    }
+
+    nav a:hover {
+      background-color: #ff9900;
+      color: #fff;
+    }
+
+    .api-list {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .api-list-item {
+      margin-bottom: 20px;
+    }
+
+    .api-list-item a {
+      text-decoration: none;
+      color: #ff9900;
+      font-weight: bold;
+      padding: 5px 10px;
+      border: 2px solid #ff9900;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    .api-list-item a:hover {
+      background-color: #ff9900;
+      color: #fff;
+    }
+
+    .api-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 153, 0, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .api-form label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .api-form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .api-form button {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .owner-info {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      color: #333;
+      text-align: center;
+    }
+
+    #current-time,
+    #current-date {
+      color: #ff0000;
+      text-align: center;
+      border-radius: 30px;
+      font-weight: bold;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #00ccff;
+      font-size: 30px;
+      margin: 0 10px;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Live Background */
+    #live-background {
       position: fixed;
-      z-index: 1;
-      left: 0;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
+      z-index: -1;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -83,25 +200,14 @@
 
 <header>
   <img class="logo" src="https://i.imgur.com/QttzoYh.jpeg" alt="Official AryanAPIs Website">
-  <h1 class="glow">Welcome to Aryans APIs Hub</h1>
+  <h1>Welcome to APIs Hub</h1>
 </header>
 
 <nav>
   <a href="/">Home</a>
   <a href="/about">About</a>
   <a href="/contact">Contact</a>
-  <!-- Modal Trigger -->
-  <a id="modal-trigger" href="#">Open Modal</a>
 </nav>
-
-<!-- Modal Popup -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Modal Title</h2>
-    <p>This is a modal popup. You can add any content here.</p>
-  </div>
-</div>
 
 <!-- Custom API Form -->
 <form class="api-form" action="/custom-api" method="get">
@@ -117,21 +223,19 @@
   <button type="submit">SUBMIT</button>
 </form>
 
-<!-- API List -->
-<ul class="api-list">
- 
- <h2>📢 ALL API's ENDPOINT</h2>
- <ui>
- 
-<li class="api-list-item"><a href="/simplegpt?prompt=hello">GPT  API</a></li>
 
-  <li class="api-list-item"><a href="/api/recipeai/v1?prompt=test">RecipeAi API</a></li>
+<ul class="api-list"
+<h1>📢 ALL API's ENDPOINT</h1>
+</ul>
+
+ <li class="api-list-item"><a href="/api/recipeai/v1?prompt=test">RecipeAi API</a></li>
 
   <li class="api-list-item"><a href="/api/horny/v1?prompt=hello+baby">HornyAI API</a></li>
 
   <li class="api-list-item"><a href="/api/rosting/v1?prompt=hello">RostingAi API</a></li>
  
-   <li class="api-list-item"><a href="/gpt?prompt=hello">💬⚙ GPT API</a></li>
+<li class="api-list-item"><a href="/gpt?prompt=hello">💬⚙ GPT API</a></li>
+</ul>
 
 <li class="api-list-item"><a href="/gemini?prompt=hello">💬⚙ GEMINI API</a></li>
 </ul>
@@ -362,11 +466,14 @@ API</a></li>
 <li class="api-list-item"><a href="/lyricsx?songName=lyrics+cupid+fifty+fifty">🎶⚙ LYRICS API</a></li>
 </ul>
 
+<h1>Have A Great Day UwU</h1>
+  </ul>
+
 <!-- Owner Information -->
 <div class="owner-info">
   <p>Name : Aryan Chauhan</p>
   <p>Contact: aryanchauhan78578@gmail.com</p>
-  <p>APIs Crafted By Aryan Chauhan</p>
+ <p>APIs Crafted By Aryan Chauhan</p>
 </div>
 
 <!-- Current Time and Date -->
@@ -380,26 +487,22 @@ API</a></li>
 </div>
 
 <script>
-  // Your existing JavaScript code here
-
-  // Modal Popup Script
-  var modal = document.getElementById("myModal");
-  var modalTrigger = document.getElementById("modal-trigger");
-  var closeBtn = document.getElementsByClassName("close")[0];
-
-  modalTrigger.onclick = function() {
-    modal.style.display = "block";
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById("current-time").innerText = timeString;
   }
 
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
+  function updateDate() {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    document.getElementById("current-date").innerText = dateString;
   }
 
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+  updateTime();
+  updateDate();
+  setInterval(updateTime, 1000);
+  setInterval(updateDate, 86400000); // Update date every day
 </script>
 
 <!-- Copyright Information -->
