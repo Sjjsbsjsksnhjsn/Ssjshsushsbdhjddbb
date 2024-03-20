@@ -65,6 +65,24 @@ app.get('/api/jokesterai/v1', async (req, res) => {
   }
 });
 
+app.get('/api/gpt4/v1', async (req, res) => {
+  try {
+    const { prompt } = req.query;
+    const title = "👑 𝗖𝗵𝗮𝘁𝗚𝗣𝗧 (𝘃4)\n\n"; // Add your desired title here
+    const fullPrompt = `Interact as GPT-4 Developed by OpenAi:${prompt}`;
+
+    const response = await axios.get(`https://aryans-apis-hub.onrender.com/api/gpt-4?prompt=${encodeURIComponent(fullPrompt)}`);
+    const answer = response.data.answer;
+
+    // Combining title with response
+    const fullResponse = `${title} ${answer}`;
+
+    res.json({ answer: fullResponse });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get('/api/recipeai/v1', async (req, res) => {
   try {
     const { prompt } = req.query;
@@ -244,7 +262,7 @@ app.get('/api/imgur', async (req, res) => {
         return res.status(400).json({ error: 'Please provide a any Image,video,gif link' });
     }
     const response = await axios.get(`http://fi3.bot-hosting.net:20284/imgur?link=${encodeURIComponent(link)}`);
-    res.json({ answer: response.data });
+    res.json({ answer: response.data.uploaded });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
