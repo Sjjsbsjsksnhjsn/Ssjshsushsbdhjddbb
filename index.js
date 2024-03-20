@@ -72,7 +72,7 @@ app.get('/api/gpt4/v1', async (req, res) => {
     const fullPrompt = `Interact as GPT-4 Developed by OpenAi:${prompt}`;
 
     const response = await axios.get(`https://aryans-apis-hub.onrender.com/api/gpt-4?prompt=${encodeURIComponent(fullPrompt)}`);
-    const answer = response.data.answer;
+    const answer = response.data.response;
 
     // Combining title with response
     const fullResponse = `${title} ${answer}`;
