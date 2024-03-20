@@ -29,7 +29,7 @@ app.get('/api/horny/v1', async (req, res) => {
 });
 
 
-app.app.get('/api/rosting/v1', async (req, res) => {
+app.get('/api/rosting/v1', async (req, res) => {
   try {
     const { prompt } = req.query;
     const title = "👿 𝗥𝗼𝘀𝘁𝗶𝗻𝗴 (𝘃1)\n\n"; // Add your desired title here
