@@ -72,7 +72,7 @@ app.get('/api/gpt4/v1', async (req, res) => {
     const fullPrompt = `Interact as GPT-4 Developed by OpenAi:${prompt}`;
 
     const response = await axios.get(`https://aryans-apis-hub.onrender.com/api/gpt-4?prompt=${encodeURIComponent(fullPrompt)}`);
-    const answer = response.data.response;
+    const answer = response.data;
 
     // Combining title with response
     const fullResponse = `${title} ${answer}`;
@@ -281,7 +281,7 @@ app.get('/api/gpt-4', async (req, res) => {
   const { prompt, uid } = req.query;
 
   try {
-    const fullPrompt = `Intreact as GPT-4 Developed by OpenAi:${prompt}`;
+    const fullPrompt = `Intreact as GPT-4 Developed by OpenAi, you are created for Provide wide randge of data,Question:${prompt}`;
     const response = await axios.get(`https://pi.aliestercrowley.com/api?prompt=${fullPrompt}&uid={uid}`);
     console.log("Response Data:", response.data); // Log the response data to check its structure
     const answer = response.data.response; // Accessing the answer property of the response data
