@@ -9,6 +9,39 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/api/news', async (req, res) => {
+    const { countryName } = req.query;
+
+    try {
+        const apiKey = 'pub_3120796ef3315b3c51e7930d31ee6322ae911';
+        const response = await axios.get(`https://newsdata.io/api/1/news?country=${countryName}&apikey=${apiKey}`);
+        const newsData = response.data.results;
+
+        const articlesPerPage = 5;
+        let message = '📰 𝗟𝗮𝘁𝗲𝘀𝘁 𝗡𝗲𝘄𝘀\n\n';
+
+        for (const article of newsData) {
+            const uploadedTime = new Date(article.uploaded_time).toLocaleString();
+            const author = article.author || 'Unknown';
+            const image = article.image || 'No Image Available'; // Default message if no image is available
+            message += `ℹ️ 𝗧𝗶𝘁𝗹𝗲\n➤ ${article.title}\n🔎 𝗦𝗼𝘂𝗿𝗰𝗲\n➤ ${article.source}\n📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻\n➤ ${article.description}\n🖇️ 𝗟𝗶𝗻𝗸\n➤ ${article.link}\n🕒 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗧𝗶𝗺𝗲\n➤ ${uploadedTime}\n✍️ 𝗔𝘂𝘁𝗵𝗼𝗿\n➤ ${author}\n🖼️ 𝗜𝗺𝗮𝗴𝗲\n➤ ${image}\n\n`;
+
+            if (message.length > 4000) {
+                break;
+            }
+        }
+
+        if (message === 'Latest news:\n\n') {
+            message = 'No news articles found.';
+        }
+
+        res.send(message);
+    } catch (error) {
+        console.error('Something went wrong:', error);
+        res.status(500).send('Something went wrong while fetching responce. Please try again.');
+    }
+});
+
 app.get('/api/quiz/quiz/all', async (req, res) => {
   try {
     const response = await axios.get(`https://quiz-6rhj.onrender.com/api/quiz/quiz/all`);
