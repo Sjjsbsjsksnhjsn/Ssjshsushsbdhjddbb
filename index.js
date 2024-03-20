@@ -21,14 +21,7 @@ app.get('/api/news', async (req, res) => {
         let message = '📰 𝗟𝗮𝘁𝗲𝘀𝘁 𝗡𝗲𝘄𝘀\n\n';
 
         for (const article of newsData) {
-            const uploadedTime = new Date(article.uploaded_time).toLocaleString();
-            const author = article.author || 'Unknown';
-            const image = article.image || 'No Image Available'; // Default message if no image is available
-            message += `ℹ️ 𝗧𝗶𝘁𝗹𝗲\n➤ ${article.title}\n🔎 𝗦𝗼𝘂𝗿𝗰𝗲\n➤ ${article.source}\n📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻\n➤ ${article.description}\n🖇️ 𝗟𝗶𝗻𝗸\n➤ ${article.link}\n🕒 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗧𝗶𝗺𝗲\n➤ ${uploadedTime}\n✍️ 𝗔𝘂𝘁𝗵𝗼𝗿\n➤ ${author}\n🖼️ 𝗜𝗺𝗮𝗴𝗲\n➤ ${image}\n\n`;
-
-            if (message.length > 4000) {
-                break;
-            }
+            message += `ℹ️ 𝗧𝗶𝘁𝗹𝗲\n➤ ${article.title}\n🔎 𝗦𝗼𝘂𝗿𝗰𝗲\n➤ ${article.source}\n📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻\n➤ ${article.description}\n🖇️ 𝗟𝗶𝗻𝗸\n➤ ${article.link}\n\n    }
         }
 
         if (message === 'Latest news:\n\n') {
