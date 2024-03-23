@@ -91,7 +91,7 @@ app.get('/api/jokesterai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -157,7 +157,7 @@ app.get('/api/sadai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -222,7 +222,7 @@ Please note again you use these title before you send lyrics.
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -278,7 +278,7 @@ app.get('/api/memsai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -387,7 +387,7 @@ app.get('/api/hornyai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -438,7 +438,7 @@ app.get('/api/foolai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -490,7 +490,7 @@ app.get('/api/javascriptai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -546,7 +546,7 @@ app.get('/api/babeai', async (req, res) => {
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
@@ -601,7 +601,7 @@ Intreact as Smart advance delicious Food Recipes Creator Ai.
     fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
 
     // Combining title with response
-    const fullResponse = `${title} ${answer} \n\nCurrent Time: ${currentTime}, Current Date: ${currentDate}, Total Requests: ${totalRequests}`;
+    const fullResponse = `${title} ${answer} \n🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮\n➜ ${currentTime}/${currentDate}\n🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁\n➜ ${totalRequests}\n❇️ 𝗔𝗽𝗶 𝗜𝗻𝗳𝗼\n➜ This Ai was Developed by ( https://ai-technology.onrender.com )`;
 
     res.json({ fullResponse });
   } catch (error) {
