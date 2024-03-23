@@ -74,7 +74,7 @@ app.get('/api/jokesterai', async (req, res) => {
       Let's have some fun today!`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -140,7 +140,7 @@ app.get('/api/sadai', async (req, res) => {
       Let's have sad today 😭💔😞`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -205,7 +205,7 @@ Please note again you use these title before you send lyrics.
  `;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -261,7 +261,7 @@ app.get('/api/memsai', async (req, res) => {
       Let's have some trolling mems today!`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -308,7 +308,7 @@ app.get('/api/chatgpt', async (req, res) => {
       `;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -370,7 +370,7 @@ app.get('/api/hornyai', async (req, res) => {
      Let's have Horny today!`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -421,7 +421,7 @@ app.get('/api/foolai', async (req, res) => {
       Let's have fool today!`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -473,7 +473,7 @@ app.get('/api/javascriptai', async (req, res) => {
       Have a wonderful coding day...... `;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -529,7 +529,7 @@ app.get('/api/babeai', async (req, res) => {
       Let's have some romantic today!`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
@@ -584,7 +584,7 @@ Intreact as Smart advance delicious Food Recipes Creator Ai.
        Have a delicious Food.`;
 
     const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
-    const answer = response.data;
+    const answer = response.data.data;
 
     // Store request timestamp
     const timestamp = new Date();
