@@ -2,8 +2,10 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 
+// Load secret API key from environment variable
+const apiKey = process.env.API_KEY;
+
 app.get("/api/gpt", async (req, res) => {
-  const apiKey = "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";
   const url = "https://api.openai.com/v1/chat/completions";
 
   try {
