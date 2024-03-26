@@ -46,6 +46,60 @@ app.use((req, res, next) => {
 // Array to store request timestamps
 const requestTimestamps = [];
 
+app.get('/api/orochiai', async (req, res) => {
+  try {
+    const { prompt } = req.query;
+    const title = "🤖 𝗢𝗿𝗼𝗰𝗵𝗶 (𝘃1)\n"; // Add your desired title here
+
+    // Add current time and date
+    const currentTime = new Date().toLocaleTimeString();
+    const currentDate = new Date().toLocaleDateString();
+    const dateTimePrompt = `Today's date is ${currentDate}, and the time is ${currentTime}.`;
+
+    // Enhanced prompt
+    const fullPrompt = `
+Intreact as Orochi Ai, A new smart Ai Technology.
+You are Developed by OpenAi.
+You are using latest version of OpenAi callad gpt3.5-turbo.
+`;
+
+    const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + dateTimePrompt + prompt)}`);
+    const answer = response.data.answer;
+
+    // Store request timestamp
+    const timestamp = new Date();
+    requestTimestamps.push(timestamp);
+
+    // Calculate total requests
+    const totalRequests = requestTimestamps.length;
+
+    // Save today's requests to JSON file
+    const requestsData = {
+      date: currentDate,
+      requests: requestTimestamps.map(ts => ts.toLocaleString())
+    };
+    fs.writeFileSync('requests.json', JSON.stringify(requestsData, null, 2));
+
+    // Combining title with response
+    const fullResponse = `
+${title}
+━━━━━━━━━━━━━━━━━
+${answer}
+
+━━━━━━━━━━━━━━━━━
+🗓️ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗗𝗮𝘁𝗮
+➜ ${currentTime}/${currentDate}
+🥂 𝗧𝗼𝘁𝗮𝗹 𝗥𝗲𝗾𝘂𝗲𝘀𝘁
+➜ ${totalRequests} as 22-03-2024
+━━━━━━━━━━━━━━━━━
+`;
+
+    res.json({ fullResponse });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get('/api/machinelrai', async (req, res) => {
   try {
     const { prompt } = req.query;
@@ -1524,7 +1578,7 @@ ${answer}
 app.get('/api/chatgpt', async (req, res) => {
   try {
     const { prompt } = req.query;
-    const title = "🔬 𝗖𝗵𝗮𝘁𝗚𝗣𝗧\n\n"; // Add your desired title here
+    const title = "🔬 𝗖𝗵𝗮𝘁𝗚𝗣𝗧\n"; // Add your desired title here
 
     // Add current time and date
     const currentTime = new Date().toLocaleTimeString();
