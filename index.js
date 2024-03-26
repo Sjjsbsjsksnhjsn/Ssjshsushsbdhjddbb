@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 app.get("/api/gpt", async (req, res) => {
-  const apiKey = "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";
+  const apiKey = "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";
   const url = "https://api.openai.com/v1/chat/completions";
 
   try {
